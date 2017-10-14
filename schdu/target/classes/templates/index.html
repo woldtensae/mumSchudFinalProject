@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js" th:integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" th:crossorigin="anonymous"></script>
+<meta charset="ISO-8859-1" />
+<title>Insert title here</title>
+<script>
+	$(document).ready(function(){
+		$("#manage_Entry_sub").hide();
+		
+		$("#manage_Entry").click(function(){
+			$("#manage_Entry_sub").show();
+			$("#add_Entry_form").hide();
+		});
+		$("#create_entry").click(function(){
+			$("#add_Entry_form").show();
+		});
+		
+	});
+</script>
+<style>
+	.mainContainer{
+	    width:  80%;
+	    margin: auto;
+	}
+	.leftnav{
+	    width:  20%;
+	    float: left;
+	}
+	.mainContent{
+	    width:  75%;
+	    float: right;
+	}
+	.
+</style>
+</head>
+<body>
+	<div class="mainContainer">
+		<h1>Welcome to MUM schedule</h1>
+		<div class="leftnav">
+			<div><a id="manage_Entry" href="#">Manage Entry</a></div>
+			<div><a href="#">Manage Blocks</a></div>
+			<div><a href="#">Manage Sections</a></div>
+		</div>
+		<div class="mainContent">
+			<div id="manage_Entry_sub">
+				<a id="create_entry" href="#">Create Entry</a>
+				<a href="#">Delete Entry</a> 
+				<a href="#">Update Entry</a> 
+				<a id="view_entry" href="#">View Entry</a><br></br>
+				<div id="add_Entry_form">
+						<form method="post" action="/addEntry" modelAttribute="entry">
+							<label for="entryMonth">Entry Month</label>
+							<input type="text" name="entryMonth" />
+							<br></br>
+							<label for="numOfMpp">Number of MPP</label>
+							<input type="number" name="numOfMpp" />
+							<br></br>
+							<label for="numOfFpp">Number of FPP</label>
+							<input type="number" name="numOfFpp" />
+							<br></br>
+							
+							<label for="numOfUSstudents">Number of US Students</label>
+							<input type="number" name="numOfUSstudents" />
+							<br></br>
+							<button type="submit">Save</button>
+									
+						</form> 
+				</div>
+				<div></div>
+				<div></div>
+				<div id="view_entry_list">
+					
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</body>
+</html>

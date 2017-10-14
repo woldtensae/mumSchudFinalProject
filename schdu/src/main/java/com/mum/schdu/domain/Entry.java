@@ -2,7 +2,7 @@ package com.mum.schdu.domain;
 
 import java.util.List;
 
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,6 +17,7 @@ public class Entry {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
+	
 	private String entryMonth;
 	private int numOfFpp;
 	private int numOfMpp;
@@ -25,10 +26,10 @@ public class Entry {
 	
 	//private List<Block> blocks;
 	
-	public Entry() {
+	/*public Entry() {
 		//this.blocks = BlocksFactory.generateBlocks();
-	}
-
+	}*/
+	//@Column(name="entry_month")
 	public String getEntryMonth() {
 		return entryMonth;
 	}
