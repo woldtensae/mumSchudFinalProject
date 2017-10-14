@@ -21,8 +21,8 @@ public class EntryServiceImpl implements EntryService{
 	}
 
 	@Override
-	public Entry getEntry(String entryMonth) {
-		return entryDao.findEntryByEntryMonth(entryMonth);
+	public Entry getEntry(Long id) {
+		return entryDao.findOne(id);
 	}
 
 	@Override

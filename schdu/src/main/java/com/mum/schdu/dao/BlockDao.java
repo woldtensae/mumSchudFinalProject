@@ -8,9 +8,6 @@ import org.springframework.data.repository.query.Param;
 import com.mum.schdu.domain.Block;
 
 public interface BlockDao extends CrudRepository<Block, Long> {
-	
-	
 	@Query("select b from Block b where b.blockMonth = blockMonth")
 	public Block findBlockByBlockMonth(@Param("blockMonth") String blockMonth);
-
 }

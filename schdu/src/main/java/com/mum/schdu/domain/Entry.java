@@ -2,11 +2,14 @@ package com.mum.schdu.domain;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 
 
@@ -24,12 +27,26 @@ public class Entry {
 	private int numOfUSstudents;
 	
 	
-	//private List<Block> blocks;
+	@OneToMany(mappedBy = "entry", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private List<Block> blocks;
 	
-	/*public Entry() {
-		//this.blocks = BlocksFactory.generateBlocks();
-	}*/
-	//@Column(name="entry_month")
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public List<Block> getBlocks() {
+		return blocks;
+	}
+
+	public void setBlocks(List<Block> blocks) {
+		this.blocks = blocks;
+	}
+	
 	public String getEntryMonth() {
 		return entryMonth;
 	}

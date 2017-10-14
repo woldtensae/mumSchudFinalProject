@@ -7,18 +7,26 @@ import org.springframework.stereotype.Service;
 
 import com.mum.schdu.dao.BlockDao;
 import com.mum.schdu.domain.Block;
+import com.mum.schdu.domain.Entry;
 import com.mum.schdu.service.BlockService;
+import com.mum.schdu.service.EntryService;
 
 @Service
 public class BlockServiceImpl implements BlockService{
 	
 	@Autowired
 	private BlockDao blockDao;
+	@Autowired
+	private EntryService entryService;
 	
 	@Override
 	public void saveBlock(Block block) {
+		Entry currentEntry = entryService.getEntry(new Long(5));
+		System.out.println(currentEntry.getEntryMonth());
+		block.setEntry(currentEntry);
+		currentEntry.getBlocks().add(block);
+		entryService.updateEntry(currentEntry);
 		blockDao.save(block);
-		
 	}
 
 	@Override

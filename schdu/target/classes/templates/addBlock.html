@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+<meta charset="ISO-8859-1" http-equiv="Content-Type"/>
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form method="post" action="/addBlock" modelAttribute="block">
+		
+		<label for="block_start_date">Start Date</label>
+		<input type="date" name="blockStartDate" />
+		<br></br>
+		<label for="block_month">Block Month</label>
+		<input type="text" name="blockMonth" />
+		<br></br>
+		<label for="block_end_date">End Date</label>
+		<input type="date" name="blockEndDate" />
+		<br></br>
+		
+		<br></br>
+		<button type="submit">Save</button>						
+	</form> 
+</body>
+</html>

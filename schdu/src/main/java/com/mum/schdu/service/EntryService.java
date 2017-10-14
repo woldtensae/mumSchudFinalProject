@@ -7,7 +7,7 @@ import com.mum.schdu.domain.Entry;
 
 public interface EntryService {
 	public void saveEntry(Entry entry);
-	public Entry getEntry(String id);
+	public Entry getEntry(Long id);
 	public List<Entry> getAllEntry();
 	public Entry getEntryByMonth(String month);
 	public void deleteEntryk(Long id);
