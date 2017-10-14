@@ -27,7 +27,7 @@ public class Entry {
 	private int numOfUSstudents;
 	
 	
-	@OneToMany(mappedBy = "entry", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "entry", /*cascade = CascadeType.ALL,*/ fetch = FetchType.EAGER)
 	private List<Block> blocks;
 	
 	
