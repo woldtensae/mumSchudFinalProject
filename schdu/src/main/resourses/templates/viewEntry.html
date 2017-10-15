@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1" />
+<title>Insert title here</title>
+</head>
+<body>
+<table>
+	<tr th:each="entry : ${listOfEntries}">
+	
+        <td th:text="${entry.entryMonth}">1</td>
+        <td th:text="${entry.numOfFpp}">Title ...</td>
+        <td th:text="${entry.numOfMpp}">Text ...</td>
+        <td th:text="${entry.numOfUSstudents}">Text ...</td>
+        <td>
+        <form method="post" action="/deleteEntry">
+        	<input name="id"  type="hidden" th:value="${entry.id}" />
+        	<input type="submit" value="Delete" />
+        </form>
+        </td>
+       
+       	<td>
+        <form method="post" action="/findEntry">
+        	<input name="id"  type="hidden" th:value="${entry.id}" />
+        	<input type="submit" value="update" />
+        </form>
+        </td>
+    </tr>
+    <tr th:each="entry : ${listOfEntries}">
+    	<td >
+	    	<table>
+		    	<tr th:each="block: ${entry.blocks}">
+		    		<td th:text="${block.blockMonth}"></td>
+		    		<td th:text="${block.blockStartDate}"></td>
+		    		<td th:text="${block.blockEndDate}"></td>
+		    		
+		    		<td>
+				        <form method="post" action="/deleteBlock">
+				        	<input name="id"  type="hidden" th:value="${block.id}" />
+				        	<input type="submit" value="Delete" />
+				        </form>
+				        </td>
+				       
+				       	<td>
+				        <form method="post" action="/findBlock">
+				        	<input name="id"  type="hidden" th:value="${block.id}" />
+				        	<input type="submit" value="update" />
+				        </form>
+			        </td>
+			        
+		    	</tr>
+		    			
+	    	</table>
+	    	
+		    		
+    	</td>
+    </tr>
+ </table>
+ 		
+</body>
+</html>

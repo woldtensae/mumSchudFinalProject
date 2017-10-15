@@ -3,7 +3,6 @@ package com.mum.schdu.domain;
 import java.util.List;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -27,7 +26,7 @@ public class Entry {
 	private int numOfUSstudents;
 	
 	
-	@OneToMany(mappedBy = "entry", /*cascade = CascadeType.ALL,*/ fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "entry", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Block> blocks;
 	
 	

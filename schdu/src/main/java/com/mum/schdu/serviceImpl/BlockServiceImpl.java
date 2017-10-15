@@ -21,11 +21,11 @@ public class BlockServiceImpl implements BlockService{
 	
 	@Override
 	public void saveBlock(Block block) {
-		Entry currentEntry = entryService.getEntry(new Long(5));
+		Entry currentEntry = entryService.getEntry(new Long(8));
 		System.out.println(currentEntry.getEntryMonth());
 		block.setEntry(currentEntry);
 		currentEntry.getBlocks().add(block);
-		entryService.updateEntry(currentEntry);
+		entryService.saveEntry(currentEntry);
 		blockDao.save(block);
 	}
 

@@ -10,7 +10,7 @@ public interface EntryService {
 	public Entry getEntry(Long id);
 	public List<Entry> getAllEntry();
 	public Entry getEntryByMonth(String month);
-	public void deleteEntryk(Long id);
-	public void updateEntry(Entry entry);
+	public void deleteEntry(Long id);
+	public void updateEntry(String entryMonth, int numOfFpp, int numOfMpp, int numOfUSstudents, Long id);
 
 }

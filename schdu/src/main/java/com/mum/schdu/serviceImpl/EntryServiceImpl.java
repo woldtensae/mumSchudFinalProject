@@ -36,13 +36,13 @@ public class EntryServiceImpl implements EntryService{
 	}
 
 	@Override
-	public void deleteEntryk(Long id) {
+	public void deleteEntry(Long id) {
 		entryDao.delete(id);
 		
 	}
 
 	@Override
-	public void updateEntry(Entry entry) {
-		entryDao.save(entry);
+	public void updateEntry(String entryMonth, int numOfFpp, int numOfMpp, int numOfUSstudents, Long id) {
+		entryDao.update(entryMonth, numOfFpp, numOfMpp, numOfUSstudents, id);
 	}
 }
