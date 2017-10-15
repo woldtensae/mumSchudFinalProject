@@ -37,14 +37,16 @@
 		    		<td>
 				        <form method="post" action="/deleteBlock">
 				        	<input name="id"  type="hidden" th:value="${block.id}" />
-				        	<input type="submit" value="Delete" />
+				        	<input name="entry_id"  type="hidden" th:value="${entry.id}" />
+				        	<input type="submit" value="Delete Block" />
 				        </form>
 				        </td>
 				       
 				       	<td>
 				        <form method="post" action="/findBlock">
 				        	<input name="id"  type="hidden" th:value="${block.id}" />
-				        	<input type="submit" value="update" />
+				        	<input name="entry_id"  type="hidden" th:value="${entry.id}" />
+				        	<input type="submit" value="Update Block" />
 				        </form>
 			        </td>
 			        
