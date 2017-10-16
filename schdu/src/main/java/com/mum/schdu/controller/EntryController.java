@@ -25,9 +25,9 @@ public class EntryController {
 	private EntryService entryService;
 	
 	@RequestMapping(value= {"/addEntry"},method=RequestMethod.POST)
-	public @ResponseBody String saveEntry(@ModelAttribute("entry") Entry newEntry){
+	public RedirectView saveEntry(@ModelAttribute("entry") Entry newEntry){
 		entryService.saveEntry(newEntry);
-		return "saved";
+		return new RedirectView("/");
 	}
 	
 	@RequestMapping(value= {"/deleteEntry"},method=RequestMethod.POST)

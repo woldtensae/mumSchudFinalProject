@@ -33,9 +33,9 @@ public class BlockController {
 		return "addBlock";
 	}	
 	@RequestMapping(value= {"/addBlock"},method=RequestMethod.POST)
-	public @ResponseBody String saveBlock(@ModelAttribute("block") Block newBlock){
+	public @ResponseBody RedirectView saveBlock(@ModelAttribute("block") Block newBlock){
 		blockService.saveBlock(newBlock);
-		return "saved";
+		return new RedirectView("/allEntry");
 	}
 	
 	

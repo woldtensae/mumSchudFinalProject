@@ -13,18 +13,22 @@
         <td th:text="${entry.numOfMpp}">Text ...</td>
         <td th:text="${entry.numOfUSstudents}">Text ...</td>
         <td>
-        <form method="post" action="/deleteEntry">
-        	<input name="id"  type="hidden" th:value="${entry.id}" />
-        	<input type="submit" value="Delete" />
-        </form>
+	        <form method="post" action="/deleteEntry">
+	        	<input name="id"  type="hidden" th:value="${entry.id}" />
+	        	<input type="submit" value="Delete" />
+	        </form>
         </td>
-       
        	<td>
-        <form method="post" action="/findEntry">
-        	<input name="id"  type="hidden" th:value="${entry.id}" />
-        	<input type="submit" value="update" />
-        </form>
+	        <form method="post" action="/findEntry">
+	        	<input name="id"  type="hidden" th:value="${entry.id}" />
+	        	<input type="submit" value="update" />
+	        </form>
         </td>
+        <td>
+			<form action="/addBlock">
+	        	<input type="submit" value="Add Block" />
+	        </form>
+		</td>
     </tr>
     <tr th:each="entry : ${listOfEntries}">
     	<td >
