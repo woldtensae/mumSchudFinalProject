@@ -1,0 +1,66 @@
+
+	.mainContainer{
+	    width:  80%;
+	    margin: auto;
+	}
+	.leftnav{
+	    width:  20%;
+	    float: left;
+	}
+	
+	
+	
+	html body{
+	margin-top: 0;
+	margin: 0;
+	padding: 0;
+	background-color: silver;
+	}
+	#header{
+		top: 0;
+		height: 100px;
+		width: 100%;
+		background-color: darkblue;
+		color: white;
+		position: fixed;
+		padding-left: 50px;
+		font-family: "Impact";
+	}
+	
+	#content{
+		margin-top: 120px;
+		width: 90%;
+		margin-left: auto;
+	
+	}
+	#linkDiv{
+		width: 150px;
+		height: 20px;
+		font-family: "Amaranth";
+		color: white; 
+		border-radius: 5px;
+		padding: 10px;
+		margin: 10px;
+		background-color: lightgray;
+		border-style: solid; 
+		
+	}
+	a{
+		text-decoration: none;
+		font-size: 1em;
+	}
+	.bodyLinks{
+		font-family: "Arial Black";
+		font-size: 1.5me;
+		padding-right: 10px;
+		color: darkblue; 
+	}
+	.mainContent{
+		width:65%;
+		
+	}
+	#add_Entry_form{
+		width:50%;
+		margin:auto;
+	}
+

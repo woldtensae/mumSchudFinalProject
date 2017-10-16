@@ -5,6 +5,15 @@
 <script
   src="https://code.jquery.com/jquery-3.2.1.js" th:integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" th:crossorigin="anonymous"></script>
 <meta charset="ISO-8859-1" />
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" th:integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" th:crossorigin="anonymous" />
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" th:integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" th:crossorigin="anonymous" />
+<link rel="stylesheet"  href="style.css" />
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" th:integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" th:crossorigin="anonymous"></script>
 <title>Insert title here</title>
 <script>
 	$(document).ready(function(){
@@ -21,6 +30,7 @@
 	});
 </script>
 <style>
+
 	.mainContainer{
 	    width:  80%;
 	    margin: auto;
@@ -29,52 +39,112 @@
 	    width:  20%;
 	    float: left;
 	}
-	.mainContent{
-	    width:  75%;
-	    float: right;
+	
+	
+	
+	html body{
+	margin-top: 0;
+	margin: 0;
+	padding: 0;
+	background-color: silver;
 	}
-	.
+	#header{
+		top: 0;
+		height: 100px;
+		width: 100%;
+		background-color: darkblue;
+		color: white;
+		position: fixed;
+		padding-left: 50px;
+		font-family: "Impact";
+	}
+	
+	#content{
+		margin-top: 120px;
+		width: 90%;
+		margin-left: auto;
+	
+	}
+	#linkDiv{
+		width: 150px;
+		height: 50px;
+		font-family: "Amaranth";
+		color: white; 
+		border-radius: 5px;
+		padding: 10px;
+		margin: 10px;
+		background-color: lightgray;
+		border-style: solid; 
+		
+	}
+	a{
+		text-decoration: none;
+		font-size: 1em;
+	}
+	.bodyLinks{
+		font-family: "Arial Black";
+		font-size: 1.5me;
+		padding-right: 10px;
+		color: darkblue; 
+	}
+	.mainContent{
+		width:65%;
+		
+	}
+	#add_Entry_form{
+		width:50%;
+		margin:auto;
+	}
+
+
+
 </style>
 </head>
 <body>
-	<div class="mainContainer">
+	<div id="header">
 		<h1>Welcome to MUM schedule</h1>
+	</div>
+	<div id="content">
+		
 		<div class="leftnav">
-			<div><a id="manage_Entry" href="#">Manage Entry</a></div>
-			<div><a href="#">Manage Blocks</a></div>
-			<div><a href="#">Manage Sections</a></div>
+			<div id="linkDiv"><a id="manage_Entry" href="#">Manage Entry</a></div>
+			<div id="linkDiv"><a href="#">Manage Blocks</a></div>
+			<div id="linkDiv"><a href="#">Manage Sections</a></div>
 		</div>
 		<div class="mainContent">
 			<div id="manage_Entry_sub">
-				<a id="create_entry" href="#">Create Entry</a>
-				<a href="#">Delete Entry</a> 
-				<a href="#">Update Entry</a> 
-				<a id="view_entry" href="/allEntry">View Entry</a><br></br>
+				<a class="bodyLinks"  id="create_entry" href="#">Create Entry</a>
+				<a class="bodyLinks" href="#">Delete Entry</a> 
+				<a class="bodyLinks" href="#">Update Entry</a> 
+				<a class="bodyLinks" id="view_entry" href="/allEntry">View Entry</a><br></br>
+				
 				<div id="add_Entry_form">
 						<form method="post" action="/addEntry" modelAttribute="entry">
+						<div class="form-group">
 							<label for="entryMonth">Entry Month</label>
-							<input type="text" name="entryMonth" />
+							<input type="text" name="entryMonth" class="form-control" placeholder="Entry Month" />
 							<br></br>
 							<label for="numOfMpp">Number of MPP</label>
-							<input type="number" name="numOfMpp" />
+							<input type="number" name="numOfMpp" class="form-control" placeholder="Number of Fpp" />
 							<br></br>
 							<label for="numOfFpp">Number of FPP</label>
-							<input type="number" name="numOfFpp" />
+							<input type="number" name="numOfFpp" class="form-control" placeholder="Number of MPP" />
 							<br></br>
 							
 							<label for="numOfUSstudents">Number of US Students</label>
-							<input type="number" name="numOfUSstudents" />
+							<input type="number" name="numOfUSstudents" class="form-control" placeholder="Number of US Students" />
 							<br></br>
-							<button type="submit">Save</button>
-									
+							<button class="btn btn-primary" type="submit">Save</button>
+						</div>	
 						</form> 
+				</div>		
 				</div>
 				<div></div>
 				<div></div>
 				<div id="view_entry_list">
 					
 				</div>
-			</div>
+			
 			
 		</div>
 	</div>
