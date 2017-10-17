@@ -3,22 +3,132 @@
 <head lang="en">
 <meta charset="ISO-8859-1" http-equiv="Content-Type"/>
 <title>Insert title here</title>
+<style type="text/css">
+	.mainContainer{
+	    width:  80%;
+	    margin: auto;
+	    margin-top: 120px;
+	}
+	.leftnav{
+	    width:  20%;
+	    float: left;
+	}
+	
+	
+	
+	html body{
+	margin-top: 0;
+	margin: 0;
+	padding: 0;
+	background-color: silver;
+	}
+	#header{
+		top: 0;
+		height: 100px;
+		width: 100%;
+		background-color: darkblue;
+		color: white;
+		position: fixed;
+		padding-left: 50px;
+		font-family: "Impact";
+	}
+	
+	#content{
+		margin-top: 120px;
+		width: 90%;
+		margin-left: auto;
+	
+	}
+	#linkDiv{
+		width: 150px;
+		height: 50px;
+		font-family: "Amaranth";
+		color: white; 
+		border-radius: 5px;
+		padding: 10px;
+		margin: 10px;
+		background-color: lightgray;
+		border-style: solid; 
+		
+	}
+	a{
+		text-decoration: none;
+		font-size: 1em;
+	}
+	.bodyLinks{
+		font-family: "Arial Black";
+		font-size: 1.5me;
+		padding-right: 10px;
+		color: darkblue; 
+	}
+	.mainContent{
+		width:65%;
+		
+	}
+	#add_Entry_form{
+		width:50%;
+		margin:auto;
+	}
+
+	.entryDetail{
+		
+		font-family: "Amaranth";
+		color: white; 
+		border-radius: 5px;
+		padding: 10px;
+		margin: 10px;
+		background-color: darkblue;
+		border-style: solid;
+		height:300px;
+	}
+	.entryDetailLeft{
+		float: left;
+		width:50%;
+	}
+	.entryDetailRight{
+		float: right;
+		width:40%;
+	}
+	.entryDelete{
+		width:20%;
+		padding-top:20px;
+		padding-bottom: 10px;
+	}
+	.entryUpdate{
+	 	width:20%;
+	 	padding-bottom: 10px;
+	}
+	.blockEntry{
+		width:20%;
+		padding-bottom: 10px;
+	}
+	.updateForm{
+		margin-top:150px;
+		margin-left:100px;
+		width:40%;
+	}
+</style>
 </head>
 <body>
-	<form method="post" action="/addBlock" modelAttribute="block">
+	<div id="header">
+		<h1>Manage MUM Entry </h1>
+	</div>
+	<div class="updateForm">
+	<form method="post" action="/addBlock" modelAttribute="block" class="form-group">
 		
 		<label for="block_start_date">Start Date</label>
-		<input type="date" name="blockStartDate" />
+		<input type="date" name="blockStartDate" class="form-control" />
 		<br></br>
 		<label for="block_month">Block Month</label>
-		<input type="text" name="blockMonth" />
+		<input type="text" name="blockMonth" class="form-control" />
 		<br></br>
 		<label for="block_end_date">End Date</label>
-		<input type="date" name="blockEndDate" />
+		<input type="date" name="blockEndDate" class="form-control" />
 		<br></br>
 		
 		<br></br>
-		<button type="submit">Save</button>						
+		<button type="submit" class="btn btn-primary"> Save</button>						
 	</form> 
+	</div>
 </body>
 </html>

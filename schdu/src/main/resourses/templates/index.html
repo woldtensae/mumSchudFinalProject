@@ -15,20 +15,7 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" th:integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" th:crossorigin="anonymous"></script>
 <title>Insert title here</title>
-<script>
-	$(document).ready(function(){
-		$("#manage_Entry_sub").hide();
-		
-		$("#manage_Entry").click(function(){
-			$("#manage_Entry_sub").show();
-			$("#add_Entry_form").hide();
-		});
-		$("#create_entry").click(function(){
-			$("#add_Entry_form").show();
-		});
-		
-	});
-</script>
+
 <style>
 
 	.mainContainer{
@@ -107,46 +94,11 @@
 	<div id="content">
 		
 		<div class="leftnav">
-			<div id="linkDiv"><a id="manage_Entry" href="#">Manage Entry</a></div>
-			<div id="linkDiv"><a href="#">Manage Blocks</a></div>
-			<div id="linkDiv"><a href="#">Manage Sections</a></div>
+			<div id="linkDiv"><a id="manage_Entry" href="#">Entry</a></div>
+			<div id="linkDiv"><a href="#">Blocks</a></div>
+			<div id="linkDiv"><a href="#">Sections</a></div>
 		</div>
-		<div class="mainContent">
-			<div id="manage_Entry_sub">
-				<a class="bodyLinks"  id="create_entry" href="#">Create Entry</a>
-				<a class="bodyLinks" href="#">Delete Entry</a> 
-				<a class="bodyLinks" href="#">Update Entry</a> 
-				<a class="bodyLinks" id="view_entry" href="/allEntry">View Entry</a><br></br>
-				
-				<div id="add_Entry_form">
-						<form method="post" action="/addEntry" modelAttribute="entry">
-						<div class="form-group">
-							<label for="entryMonth">Entry Month</label>
-							<input type="text" name="entryMonth" class="form-control" placeholder="Entry Month" />
-							<br></br>
-							<label for="numOfMpp">Number of MPP</label>
-							<input type="number" name="numOfMpp" class="form-control" placeholder="Number of Fpp" />
-							<br></br>
-							<label for="numOfFpp">Number of FPP</label>
-							<input type="number" name="numOfFpp" class="form-control" placeholder="Number of MPP" />
-							<br></br>
-							
-							<label for="numOfUSstudents">Number of US Students</label>
-							<input type="number" name="numOfUSstudents" class="form-control" placeholder="Number of US Students" />
-							<br></br>
-							<button class="btn btn-primary" type="submit">Save</button>
-						</div>	
-						</form> 
-				</div>		
-				</div>
-				<div></div>
-				<div></div>
-				<div id="view_entry_list">
-					
-				</div>
-			
-			
-		</div>
+		
 	</div>
 </body>
 </html>

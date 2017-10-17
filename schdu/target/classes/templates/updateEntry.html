@@ -1,27 +1,150 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js" th:integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" th:crossorigin="anonymous"></script>
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" th:integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" th:crossorigin="anonymous" />
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" th:integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" th:crossorigin="anonymous" />
+<link rel="stylesheet"  href="style.css" />
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" th:integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" th:crossorigin="anonymous"></script>
+
+
 <meta charset="ISO-8859-1" />
 <title>Insert title here</title>
+<style type="text/css">
+	.mainContainer{
+	    width:  80%;
+	    margin: auto;
+	    margin-top: 120px;
+	}
+	.leftnav{
+	    width:  20%;
+	    float: left;
+	}
+	
+	
+	
+	html body{
+	margin-top: 0;
+	margin: 0;
+	padding: 0;
+	background-color: silver;
+	}
+	#header{
+		top: 0;
+		height: 100px;
+		width: 100%;
+		background-color: darkblue;
+		color: white;
+		position: fixed;
+		padding-left: 50px;
+		font-family: "Impact";
+	}
+	
+	#content{
+		margin-top: 120px;
+		width: 90%;
+		margin-left: auto;
+	
+	}
+	#linkDiv{
+		width: 150px;
+		height: 50px;
+		font-family: "Amaranth";
+		color: white; 
+		border-radius: 5px;
+		padding: 10px;
+		margin: 10px;
+		background-color: lightgray;
+		border-style: solid; 
+		
+	}
+	a{
+		text-decoration: none;
+		font-size: 1em;
+	}
+	.bodyLinks{
+		font-family: "Arial Black";
+		font-size: 1.5me;
+		padding-right: 10px;
+		color: darkblue; 
+	}
+	.mainContent{
+		width:65%;
+		
+	}
+	#add_Entry_form{
+		width:50%;
+		margin:auto;
+	}
+
+	.entryDetail{
+		
+		font-family: "Amaranth";
+		color: white; 
+		border-radius: 5px;
+		padding: 10px;
+		margin: 10px;
+		background-color: darkblue;
+		border-style: solid;
+		height:300px;
+	}
+	.entryDetailLeft{
+		float: left;
+		width:50%;
+	}
+	.entryDetailRight{
+		float: right;
+		width:40%;
+	}
+	.entryDelete{
+		width:20%;
+		padding-top:20px;
+		padding-bottom: 10px;
+	}
+	.entryUpdate{
+	 	width:20%;
+	 	padding-bottom: 10px;
+	}
+	.blockEntry{
+		width:20%;
+		padding-bottom: 10px;
+	}
+	.updateForm{
+		margin-top:150px;
+		margin-left:100px;
+		width:40%;
+	}
+</style>
 </head>
 <body>
-	<form method="post" action="/updateEntry" modelAttribute="entry">
-		<label for="entryMonth">Entry Month</label>
-		<input type="text" th:value="${updatableEntry.entryMonth}" name="entryMonth" />
-		<br></br>
-		<label for="numOfMpp">Number of MPP</label>
-		<input type="number" th:value="${updatableEntry.numOfMpp}" name="numOfMpp" />
-		<br></br>
-		<label for="numOfFpp">Number of FPP</label>
-		<input type="number" th:value="${updatableEntry.numOfFpp}" name="numOfFpp" />
-		<br></br>
-		
-		<label for="numOfUSstudents">Number of US Students</label>
-		<input type="number" th:value="${updatableEntry.numOfUSstudents}" name="numOfUSstudents" />
-		<br></br>
-		<input name="id"  type="hidden" th:value="${updatableEntry.id}" />
-		<button type="submit">Update</button>
+	<div id="header">
+		<h1>Manage MUM Entry </h1>
+	</div>
+	<div class="updateForm">	
+		<form method="post" action="/updateEntry" modelAttribute="entry" class="form-group">
+			<label for="entryMonth">Entry Month</label>
+			<input type="text" class="form-control" th:value="${updatableEntry.entryMonth}" name="entryMonth" />
+			<br></br>
+			<label for="numOfMpp">Number of MPP</label>
+			<input class="form-control" type="number" th:value="${updatableEntry.numOfMpp}" name="numOfMpp" />
+			<br></br>
+			<label for="numOfFpp">Number of FPP</label>
+			<input class="form-control" type="number" th:value="${updatableEntry.numOfFpp}" name="numOfFpp" />
+			<br></br>
 			
-	</form> 
+			<label for="numOfUSstudents">Number of US Students</label>
+			<input class="form-control" type="number" th:value="${updatableEntry.numOfUSstudents}" name="numOfUSstudents" />
+			<br></br>
+			<input name="id"  type="hidden" th:value="${updatableEntry.id}" />
+			<button type="submit" class="btn btn-primary">Update</button>
+		</form> 
+	</div>	
 </body>
 </html>
